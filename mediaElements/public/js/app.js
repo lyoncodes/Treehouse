@@ -1,6 +1,6 @@
 'use strict'
 $(document).ready(function() {
-  $('#audio-player').mediaelementplayer({
+  $('audio').mediaelementplayer({
       alwaysShowControls: true,
       features: ['playpause','volume','progress'],
       audioVolume: 'horizontal',
@@ -8,22 +8,5 @@ $(document).ready(function() {
       audioHeight: 40
   }); 
 })
-$(document).ready(function() {
-  $('#audio-player-1').mediaelementplayer({
-      alwaysShowControls: true,
-      features: ['playpause','volume','progress'],
-      audioVolume: 'horizontal',
-      audioWidth: 450,
-      audioHeight: 40
-  }); 
-})
-$(document).ready(function() {
-  $('#audio-player-2').mediaelementplayer({
-      alwaysShowControls: true,
-      features: ['playpause','volume','progress'],
-      audioVolume: 'horizontal',
-      audioWidth: 450,
-      audioHeight: 40
-  }); 
-})
+
 
