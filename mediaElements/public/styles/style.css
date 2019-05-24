@@ -2,11 +2,16 @@ body {
   background: black;
 }
 
-.audio-player{
-  display: flex;
-  flex-direction: column;
-  border: none;
+.grid-container{
+  width: 95%;
+  max-width: 2000px;
+
+  display: grid;
+/* auto-fit property of repeat() function will automatically generate as many columns as needed; */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 20px;
 }
+
 
 .audio-player h1{
   font-family: Arial, Helvetica, sans-serif;
