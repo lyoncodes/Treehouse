@@ -2,19 +2,24 @@ body {
   background: black;
 }
 
-.grid-container{
-  width: 95%;
-  max-width: 2000px;
-
-  display: grid;
-/* auto-fit property of repeat() function will automatically generate as many columns as needed; */
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  grid-gap: 20px;
+.audio-wrapper{
+  margin: 0 auto;
+  display: block;
+  width: 400px;
 }
 
-
-.audio-player h1{
+.audio-wrapper h1{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
   color: white;
 }
+
+/* .grid-container{
+  width: 95%;
+  max-width: 2000px;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 20px;
+} */
