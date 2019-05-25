@@ -2,10 +2,12 @@
 $(document).ready(function() {
   $('audio').mediaelementplayer({
       alwaysShowControls: true,
-      features: ['playpause','volume','progress'],
+      features: ['playpause','volume', 'tracks', 'progress', 'duration', 'skipback'],
       audioVolume: 'horizontal',
       audioWidth: 450,
-      audioHeight: 40
+      audioHeight: 40,
+      autoRewind: true,
+      skipBackInterval: 5,
   }); 
 })
 
