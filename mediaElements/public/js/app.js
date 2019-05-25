@@ -7,7 +7,7 @@ $(document).ready(function() {
       audioWidth: 450,
       audioHeight: 40,
       autoRewind: true,
-      skipBackInterval: 5,
+      skipBackInterval: 3,
   }); 
 })
 
