@@ -1,0 +1,103 @@
+
+.audio-player,
+.audio-player div,
+.audio-player h1,
+.audio-player a,
+.audio-player img,
+.audio-player span,
+.audio-player button {
+ margin: 0;
+ padding: 0;
+ border: none;
+ outline: none;
+}
+.audio-player div{
+ position: relative;
+ border-radius: 2px;
+}
+.audio-player h1{
+ top: 25px;
+ left: 120px;
+ z-index: 1;
+ font-family: Helvetica, Arial, sans-serif;
+ font-weight: bold;
+ font-size: 28px;
+ color: #f5baba;
+}
+
+/* play, pause, mute buttons */
+.mejs-controls .mejs-button button {
+ cursor: pointer;
+ display: block;
+ position: absolute;
+ text-indent: -9999px;
+}
+div.mejs-controls .mejs-play button,
+div.mejs-controls .mejs-pause button {
+  width: 25px;
+  height: 21px;
+  top: 35px;
+  left: 135px;
+}
+.mejs-controls .mejs-pause button {
+ background-position: 0 -21px;
+}
+.mejs-controls .mejs-mute button,
+.mejs-controls .mejs-unmute button {
+ width: 14px;
+ height: 12px;
+ top: 70px;
+ left: 140px;
+}
+/* .mejs-controls .mejs-unmute button { background-position: 0 -12px; } */
+
+/* volume slider */
+.mejs-controls div.mejs-horizontal-volume-slider {
+  position: absolute;
+  top: 71px;
+  left: 165px;
+  cursor: pointer;
+}
+.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total {
+  width: 200px;
+  height: 8px;
+  background: #1930a0;
+
+  -webkit-box-shadow: inset 0px 1px 0px rgba(0,0,0, .3), 0px 1px 0px rgba(255,255,255, .25);
+  -moz-box-shadow: inset 0px 1px 0px rgba(0,0,0, .3), 0px 1px 0px rgba(255,255,255, .25);
+  box-shadow: inset 0px 1px 0px rgba(0,0,0, .3), 0px 1px 0px rgba(255,255,255, .25);
+
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
+ position: absolute;
+ width: 0;
+ height: 6px;
+ top: 1px;
+ left: 1px;
+
+ -webkit-border-radius: 6px;
+ -moz-border-radius: 6px;
+ border-radius: 6px;
+}
+/* Progress Bar 
+Set some background colors for each time state
+*/
+.mejs-controls div.mejs-time-rail {
+ width: 400px;
+}
+.mejs-controls .mejs-time-rail span {
+ position: absolute;
+ display: block;
+ width: 400px;
+ height: 5px;
+ left: 0;
+ bottom: 0;
+ cursor: pointer;
+
+ -webkit-border-radius: 0px 0px 2px 2px;
+ -moz-border-radius: 0px 0px 2px 2px;
+ border-radius: 0px 0px 2px 2px;
+}
