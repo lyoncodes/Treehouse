@@ -48,19 +48,37 @@ circleMaker();
 
 //
 function barchart(){
-  let svgContainer = d3.select("body").append("svg");
-  const xScale = d3.scaleLinear()
-    .domain([0, d3.max(minData, d => d.min)])
-    .range([0, 400]);
-  const yScale = d3.scaleBand()
-    .domain(minData.map(d => d.player))
-    .range([0, 1200]);
+  let svgContainer = d3.select("#barChart");
 
-  let rect = svgContainer.selectAll("rect")
+  // Data Specific & Layout Values
+  const xValue = d => d.min;
+  const yValue = d => d.player;
+  const margin = {top: 20, right: 20, bottom: 20, left: 20}
+
+  const width = +svgContainer._groups[0][0].width.baseVal.value;
+  const height = +svgContainer._groups[0][0].height.baseVal.value;
+
+  console.log(height, width);
+
+  const innerWidth = width - margin.left - margin.right;
+  const innerHeight = height - margin.top - margin.bottom;
+
+  // X scale
+  const xScale = d3.scaleLinear()
+    .domain([0, d3.max(minData, xValue)])
+    .range([0, innerWidth]);
+  // Y scale
+  const yScale = d3.scaleBand()
+    .domain(minData.map(yValue))
+    .range([0, innerHeight]);
+  // Group element
+  const g = svgContainer.append('g')
+    .attr('transform', `translate(${margin.left}, ${margin.top})`);
+  let rect = g.selectAll("rect")
     .data(minData)
     .enter().append('rect')
-      .attr('y', d => yScale(d.player))
-      .attr('width', d => xScale(40))
+      .attr('y', d => yScale(yValue(d)))
+      .attr('width', d => xScale(xValue(d)))
       .attr('height', yScale.bandwidth());
   
 }
