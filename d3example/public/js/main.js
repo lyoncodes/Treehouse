@@ -53,12 +53,10 @@ function barchart(){
   // Data Specific & Layout Values
   const xValue = d => d.min;
   const yValue = d => d.player;
-  const margin = {top: 20, right: 20, bottom: 20, left: 20}
+  const margin = {top: 20, right: 20, bottom: 20, left: 40}
 
   const width = +svgContainer._groups[0][0].width.baseVal.value;
   const height = +svgContainer._groups[0][0].height.baseVal.value;
-
-  console.log(height, width);
 
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
@@ -67,13 +65,23 @@ function barchart(){
   const xScale = d3.scaleLinear()
     .domain([0, d3.max(minData, xValue)])
     .range([0, innerWidth]);
+  
   // Y scale
   const yScale = d3.scaleBand()
     .domain(minData.map(yValue))
-    .range([0, innerHeight]);
+    .range([0, innerHeight])
+    .padding(0.1);
+  
+  // Y Axis
+  
   // Group element
   const g = svgContainer.append('g')
     .attr('transform', `translate(${margin.left}, ${margin.top})`);
+  
+  g.append('g').call(d3.axisLeft(yScale));
+  g.append('g').call(d3.axisBottom(xScale))
+    .attr('transform', `translate(0,${innerHeight})`);
+
   let rect = g.selectAll("rect")
     .data(minData)
     .enter().append('rect')
