@@ -1,17 +1,10 @@
-import { hello, add } from './foo.js';
-import { barchart } from './barchart.js';
-import { circleMaker } from './circles.js';
-import { calcUSG, calcAP, calcEFG, calcTSP } from './foo.js'
-
-console.log(hello());
+import { calcUSG, calcAP, calcEFG } from './foo.js'
 
 const data = [
   {
     "season": "2012-13",
     "astPer": calcAP(531, 553, 3167, 19855, 3009),
-    "efg": calcEFG(553, 185, 1288),
-    "tsp": calcTSP(1562, 1288, 321),
-    "usg": calcUSG(1288, 321, 243, 19855, 3167, 6715, 1608, 1203)
+    "efg": calcEFG(553, 185, 1288)
   },
   {
     "season": "2013-14",
@@ -45,7 +38,7 @@ const data = [
   },
 ];
 console.log(data);
-//
-circleMaker();
-//
-barchart();
+
+export function linechart(){
+
+}
