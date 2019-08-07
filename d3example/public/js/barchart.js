@@ -44,7 +44,7 @@ export function barchart(){
   const yScale = d3.scaleBand()
     .domain(minData.map(yValue))
     .range([0, innerHeight])
-    .padding(0.1);
+    .padding(0.2);
   
   // Group element
   const g = svgContainer.append('g')

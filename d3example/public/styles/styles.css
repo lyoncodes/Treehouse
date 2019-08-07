@@ -1,3 +1,8 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .55em;
+}
+
 h1 {
   color: #E03A3E;
 }
@@ -6,6 +11,28 @@ rect {
   fill:#E03A3E;
 }
 
+circle {
+  fill: steelblue;
+  opacity: .75;
+}
+
 text {
   font-size: 1.4em;
+}
+
+svg {
+  display: block;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+
+.line-path{
+  fill: none;
+  stroke: rgb(0, 128, 111);
+  stroke-width: 5;
+  stroke-linejoin: round;
 }

@@ -46,8 +46,8 @@ const data = [
   },
 ];
 
-export function linechart(){
-  let svgContainer = d3.select("#lineChart");
+export function flowchart(){
+  let svgContainer = d3.select("#flowChart");
 
   // Data Specific & Layout Values
   const xValue = d => d.season;
@@ -83,7 +83,6 @@ export function linechart(){
   const yAxis = d3.axisLeft(yScale)
     .tickSize(-innerWidth)
     .tickPadding(20);
-
   // Axis Labels
   const yAxisG = g.append('g').call(yAxis);
 
@@ -107,15 +106,6 @@ export function linechart(){
     .attr('fill', 'black')
     .text('Season (FORMAT THE NUMBERS YOU HACK)');
   //
-  const lineGenerator = d3.line()
-    .x(d => xScale(xValue(d)))
-    .y(d => yScale(yValue(d)))
-    .curve(d3.curveBasis);
-
-  g.append('path')
-    .attr('class', 'line-path')
-    .attr('d', lineGenerator(data));
-
   let rect = g.selectAll("circle")
     .data(data)
     .enter().append('circle')
