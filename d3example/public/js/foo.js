@@ -15,24 +15,25 @@ export function calcTeamAverages(player, team){
 
 export function calcUSG(fga, fta, tov, teamMin, min, teamFga, teamFta, teamTov){
   let usg = 100 * ((fga + 0.44 * fta + tov)*(teamMin/5))/(min*(teamFga + 0.44 * teamFta + teamTov));
-  console.log ('usage: ' + usg);
   return usg;
 };
 
 export function calcAP(ast, fg, min, teamMin, teamFg){
   let astPer = 100*ast/(((min/(teamMin/5))*teamFg)-fg);
-  console.log('assist %: ' + astPer);
   return astPer;
 };
 
 export function calcEFG(fg, tpfg, fga){
   let efg = (fg + 0.5 * tpfg)/fga;
-  console.log('effective fg: ' + efg);
   return efg;
 }
 
 export function calcTSP(pts, fga, fta){
   let tsp = pts/(2*(fga + 0.44 * fta))
-  console.log('true shooting %: ' + tsp);
   return tsp;
+}
+
+export function calcPPP(pts, fga, fta, tov){
+  let ppp = pts/(fga + 0.44 * fta + tov);
+  return ppp;
 }
